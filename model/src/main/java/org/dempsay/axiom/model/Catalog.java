@@ -32,4 +32,15 @@ public record Catalog(int schemaVersion, Artifact artifact, Owner owner, List<In
                 owner,
                 intents);
     }
+
+    /**
+     * Returns a copy with a replacement intent list.
+     *
+     * @param newIntents intents to store
+     * @return catalog with those intents
+     */
+    public Catalog withIntents(final List<Intent> newIntents) {
+        Objects.requireNonNull(newIntents, "newIntents");
+        return new Catalog(schemaVersion, artifact, owner, List.copyOf(newIntents));
+    }
 }
