@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/sdempsay/axiom-plugin/blob/master/schema/axiom-catalog-1.json",
+  "title": "Axiom catalog schemaVersion 1",
+  "description": "Canonical catalog.yaml document for one producing artifact and its intent facts.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schemaVersion",
+    "artifact",
+    "intents"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1,
+      "description": "Catalog schema version. Must be 1 for this document."
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "groupId",
+        "artifactId"
+      ],
+      "properties": {
+        "groupId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifactId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional in source; the Maven plugin stamps ${project.version}."
+        }
+      }
+    },
+    "owner": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "repo"
+      ],
+      "properties": {
+        "repo": {
+          "type": "string",
+          "minLength": 1,
+          "description": "GitHub owner/name, or later GitLab group/project."
+        },
+        "contact": {
+          "type": "string"
+        }
+      }
+    },
+    "intents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/intent"
+      }
+    }
+  },
+  "$defs": {
+    "intent": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "title",
+        "severity",
+        "language",
+        "blessed",
+        "snippetRef"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*$",
+          "description": "Kebab-or-snake id, stable across versions."
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "required",
+            "available"
+          ]
+        },
+        "language": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blessed": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "symbol",
+            "kind"
+          ],
+          "properties": {
+            "symbol": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Primary entry point, not every overload."
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "method",
+                "type",
+                "package"
+              ]
+            }
+          }
+        },
+        "snippetRef": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Primary snippet path relative to the catalog file."
+        },
+        "snippets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "ref",
+              "role"
+            ],
+            "properties": {
+              "ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "role": {
+                "type": "string",
+                "enum": [
+                  "primary",
+                  "secondary"
+                ]
+              }
+            }
+          }
+        },
+        "triggers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "antiPatterns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "pattern",
+              "message"
+            ],
+            "properties": {
+              "pattern": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Regex applied to source text by later lint-diff and detectors."
+              },
+              "message": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "never": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "docs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "supersedes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -18,16 +18,20 @@ Libraries depend on this plugin. They do not depend on `axiom-mcp`.
 - Java 21
 - packages `org.dempsay.axiom.model`, `.annotations`, `.plugin`
 
-## Layout (target)
+## Layout
 
 ```text
 axiom-plugin/
 ├── schema/
 │   ├── axiom-catalog-1.json
 │   └── examples/
-├── model/
-├── annotations/
-└── plugin/
+├── model/          # org.dempsay.axiom:axiom-model
+├── annotations/    # later (C2)
+└── plugin/         # later (C2)
+```
+
+```bash
+mvn -DskipDocker install
 ```
 
 PRDs (in the umbrella): [C1](https://github.com/sdempsay/axiom/blob/master/prds/C1-catalog-schema.md), [C2](https://github.com/sdempsay/axiom/blob/master/prds/C2-maven-plugin.md).
