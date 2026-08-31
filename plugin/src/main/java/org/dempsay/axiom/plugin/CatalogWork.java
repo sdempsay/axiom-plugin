@@ -29,7 +29,7 @@ import org.dempsay.utils.exceptional.api.ExceptionalSupplier;
  * Validates a catalog file, stamps the project version, and writes the stamped YAML plus report.
  *
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 public final class CatalogWork {
 

@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  * @param docs optional cold links
  * @param supersedes previous intent ids treated as lookup aliases
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 @SuppressWarnings("checkstyle:ParameterNumber")

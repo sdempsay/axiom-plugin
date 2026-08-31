@@ -6,7 +6,7 @@ package org.dempsay.axiom.model;
  * @param symbol primary entry point, not every overload
  * @param kind method, type, or package
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 public record Blessed(String symbol, BlessedKind kind) {
 }

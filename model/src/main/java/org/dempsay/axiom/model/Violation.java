@@ -9,7 +9,7 @@ import java.util.Objects;
  * @param field field or dotted path that failed
  * @param message what is wrong
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 public record Violation(String intentId, String field, String message) {
 

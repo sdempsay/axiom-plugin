@@ -2,6 +2,7 @@
 
 ## 2026-08-31
 
+- Javadoc `@since` is `1.0.0` (first public release; not `0.1.0` / SNAPSHOT).
 - C2 (`Fixes #4`): embed stamped catalog at `META-INF/axiom/catalog.yaml` (default on), attach `classifier=agent-catalog-examples` zip when snippets exist, `@AgentCapability` harvest off by default (YAML wins; missing `snippetRef` fails).
 - JUnit via dempsay-parent `tests.md` (not hand-declared junit-jupiter in module POMs).
 - C2 (`Fixes #3`): `axiom-maven-plugin` goal `catalog` validates via axiom-model, stamps `${project.version}`, writes `target/axiom/catalog.yaml`, and attaches `classifier=agent-catalog` type `yaml`. `required=true` fails on missing/invalid catalogs. Fixture IT looks like Exceptional. Embed/harvest stay issue #4.

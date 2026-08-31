@@ -17,7 +17,7 @@ import org.dempsay.utils.exceptional.api.ExceptionalSupplier;
  * Byte-stable YAML serializer for catalog documents.
  *
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 public final class CatalogFormat {
 

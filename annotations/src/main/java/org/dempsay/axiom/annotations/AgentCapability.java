@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * sets {@code harvestAnnotations=true}. Harvest does not invent snippets.
  *
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.METHOD})

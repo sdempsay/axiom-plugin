@@ -16,7 +16,7 @@ import org.junit.jupiter.api.io.TempDir;
  * Catalog validator failure cases from C1.
  *
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 class ValidateCatalogTest {
 
