@@ -2,6 +2,8 @@ package org.dempsay.axiom.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 /**
  * One intent fact in a catalog.
  *
@@ -20,6 +22,7 @@ import java.util.List;
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
  * @since 0.1.0
  */
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 @SuppressWarnings("checkstyle:ParameterNumber")
 public record Intent(
         String id,

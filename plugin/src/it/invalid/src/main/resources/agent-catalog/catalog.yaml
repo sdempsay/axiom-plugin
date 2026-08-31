@@ -1,0 +1,12 @@
+schemaVersion: 1
+artifact:
+  groupId: org.example
+  artifactId: lib
+intents:
+  - id: sample_intent
+    title: Sample
+    severity: available
+    language: java
+    blessed:
+      kind: method
+    snippetRef: missing.java
