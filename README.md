@@ -27,7 +27,7 @@ axiom-plugin/
 │   └── examples/
 ├── model/          # org.dempsay.axiom:axiom-model
 ├── plugin/         # org.dempsay.axiom:axiom-maven-plugin
-└── annotations/    # later (C2 harvest)
+└── annotations/    # org.dempsay.axiom:axiom-annotations
 ```
 
 ```bash

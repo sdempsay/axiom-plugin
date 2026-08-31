@@ -28,7 +28,7 @@ class CatalogWorkTest {
     void validCatalogAttachesClassifier() throws Exception {
         final Path catalog = writeValidCatalog(temp.resolve("src"));
         final Path output = temp.resolve("target/axiom/catalog.yaml");
-        final Outcome outcome = run(new Request(
+        final Outcome outcome = run(Request.of(
                 catalog, true, true, "1.2.3-TEST", output, temp.resolve("target/axiom/report.md")));
         assertFalse(outcome.failed());
         assertFalse(outcome.skipped());
@@ -55,7 +55,7 @@ class CatalogWorkTest {
                       kind: method
                     snippetRef: missing.java
                 """);
-        final Outcome outcome = run(new Request(
+        final Outcome outcome = run(Request.of(
                 temp.resolve("catalog.yaml"),
                 true,
                 true,
@@ -71,7 +71,7 @@ class CatalogWorkTest {
         final Path catalog = writeValidCatalog(temp.resolve("src"));
         final String source = Files.readString(catalog);
         assertFalse(source.contains("1.2.3-TEST"));
-        final Outcome outcome = run(new Request(
+        final Outcome outcome = run(Request.of(
                 catalog,
                 true,
                 true,
@@ -85,7 +85,7 @@ class CatalogWorkTest {
 
     @Test
     void missingOptionalCatalogSkips() {
-        final Outcome outcome = run(new Request(
+        final Outcome outcome = run(Request.of(
                 temp.resolve("no-such.yaml"),
                 false,
                 true,
@@ -99,7 +99,7 @@ class CatalogWorkTest {
 
     @Test
     void missingRequiredCatalogFails() {
-        final Outcome outcome = run(new Request(
+        final Outcome outcome = run(Request.of(
                 temp.resolve("no-such.yaml"),
                 true,
                 true,
@@ -109,6 +109,29 @@ class CatalogWorkTest {
         assertTrue(outcome.failed());
         assertFalse(outcome.skipped());
         assertTrue(outcome.message().contains("required"));
+    }
+
+    @Test
+    void embedInJarWritesMetaInf() throws Exception {
+        final Path catalog = writeValidCatalog(temp.resolve("src"));
+        final Path embed = temp.resolve("classes/META-INF/axiom/catalog.yaml");
+        final Path zip = temp.resolve("target/axiom/agent-catalog-examples.zip");
+        final Outcome outcome = run(new Request(
+                catalog,
+                true,
+                true,
+                "1.2.3-TEST",
+                temp.resolve("target/axiom/catalog.yaml"),
+                temp.resolve("target/axiom/report.md"),
+                embed,
+                null,
+                zip));
+        assertFalse(outcome.failed());
+        assertTrue(Files.isRegularFile(embed));
+        assertTrue(Files.readString(embed).contains("sample_intent"));
+        assertTrue(Files.isRegularFile(zip));
+        assertTrue(Files.size(zip) > 0);
+        assertEquals(zip, outcome.examplesZip());
     }
 
     private static Outcome run(final Request request) {
