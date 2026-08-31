@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  * @param owner optional owning repository
  * @param intents at least one intent
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public record Catalog(int schemaVersion, Artifact artifact, Owner owner, List<Intent> intents) {

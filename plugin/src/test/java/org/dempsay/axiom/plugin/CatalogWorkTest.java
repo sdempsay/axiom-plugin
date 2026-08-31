@@ -17,7 +17,7 @@ import org.junit.jupiter.api.io.TempDir;
  * Catalog goal behavior without Maven (C2 CatalogMojoTest cases).
  *
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 class CatalogWorkTest {
 

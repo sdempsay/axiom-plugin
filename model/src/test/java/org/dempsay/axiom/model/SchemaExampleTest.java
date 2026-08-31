@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
  * Exceptional example catalog and published JSON Schema.
  *
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 class SchemaExampleTest {
 

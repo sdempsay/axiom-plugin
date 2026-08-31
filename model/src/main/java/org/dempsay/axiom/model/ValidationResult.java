@@ -9,7 +9,7 @@ import java.util.Objects;
  * @param catalog parsed catalog when mapping succeeded; otherwise {@code null}
  * @param violations empty when the catalog is valid
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 public record ValidationResult(Catalog catalog, List<Violation> violations) {
 

@@ -6,7 +6,7 @@ package org.dempsay.axiom.model;
  * @param pattern Java regex
  * @param message shown when the pattern matches
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 public record AntiPattern(String pattern, String message) {
 }

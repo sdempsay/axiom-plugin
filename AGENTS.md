@@ -22,6 +22,10 @@ Cross-cutting work (Exceptional onboard, dispatcher, org CI) belongs on the **um
 - PRDs: umbrella `prds/C1-catalog-schema.md`, `prds/C2-maven-plugin.md`
 - `~/.grok/rules/maven.md`
 
+## Javadoc `@since`
+
+First public release is **1.0.0**. New types and methods use `@since 1.0.0`, not `0.1.0` and not the Maven SNAPSHOT version.
+
 ## JUnit
 
 dempsay-parent enables JUnit Jupiter when `src/test/resources/tests.md` exists. Do not hand-add `junit-jupiter` to module POMs; add that file instead.

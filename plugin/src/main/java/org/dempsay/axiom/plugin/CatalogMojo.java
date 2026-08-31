@@ -29,7 +29,7 @@ import org.dempsay.utils.exceptional.api.ExceptionalSupplier;
  * {@code classifier=agent-catalog} type {@code yaml}.
  *
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 @Mojo(
         name = "catalog",

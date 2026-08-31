@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * ({@code available}). The pilot does not fail consumer builds.
  *
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 public enum Severity {
     @JsonProperty("required")

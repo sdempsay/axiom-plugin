@@ -7,7 +7,7 @@ import org.dempsay.axiom.annotations.Severity;
  * Compiled fixture so harvest can scan {@code target/test-classes}.
  *
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 public final class HarvestSample {
 

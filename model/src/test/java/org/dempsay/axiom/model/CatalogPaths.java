@@ -7,7 +7,7 @@ import java.nio.file.Path;
  * Resolves files under the plugin repo's {@code schema/} tree from Maven or IDE cwd.
  *
  * @author Shawn Dempsay {@literal <shawn@dempsay.org>}
- * @since 0.1.0
+ * @since 1.0.0
  */
 final class CatalogPaths {
 
