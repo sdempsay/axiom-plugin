@@ -30,6 +30,7 @@
 
   <modules>
     <module>model</module>
+    <module>plugin</module>
   </modules>
 
   <properties>
@@ -42,6 +43,11 @@
       <dependency>
         <groupId>org.dempsay.axiom</groupId>
         <artifactId>axiom-model</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.dempsay.axiom</groupId>
+        <artifactId>axiom-maven-plugin</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
