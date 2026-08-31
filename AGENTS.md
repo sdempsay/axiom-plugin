@@ -22,6 +22,10 @@ Cross-cutting work (Exceptional onboard, dispatcher, org CI) belongs on the **um
 - PRDs: umbrella `prds/C1-catalog-schema.md`, `prds/C2-maven-plugin.md`
 - `~/.grok/rules/maven.md`
 
+## JUnit
+
+dempsay-parent enables JUnit Jupiter when `src/test/resources/tests.md` exists. Do not hand-add `junit-jupiter` to module POMs; add that file instead.
+
 ## Code review
 
 `bin/install-hooks` — pre-commit runs `code-review diff --staged` on Java / `pom.xml`. Bypass: `SKIP_CODE_REVIEW=1`.

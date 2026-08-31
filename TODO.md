@@ -10,5 +10,5 @@ Cross-cutting work lives in the [umbrella](https://github.com/sdempsay/axiom/blo
 |---|---|---|---|
 | T1 | C1: JSON Schema + `axiom-model` | complete | [#1](https://github.com/sdempsay/axiom-plugin/issues/1) |
 | T2 | C1: Exceptional example catalog validates | complete | [#2](https://github.com/sdempsay/axiom-plugin/issues/2) |
-| T3 | C2: `axiom-maven-plugin` validate, stamp, attach `agent-catalog` | pending | [#3](https://github.com/sdempsay/axiom-plugin/issues/3) |
+| T3 | C2: `axiom-maven-plugin` validate, stamp, attach `agent-catalog` | complete | [#3](https://github.com/sdempsay/axiom-plugin/issues/3) |
 | T4 | C2: embed `META-INF/axiom/catalog.yaml`; annotation harvest off | pending | [#4](https://github.com/sdempsay/axiom-plugin/issues/4) |
