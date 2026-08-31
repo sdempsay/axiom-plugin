@@ -1,0 +1,38 @@
+schemaVersion: 1
+artifact:
+  groupId: org.dempsay.utils
+  artifactId: exceptional
+  version: "1.0.9"
+owner:
+  repo: sdempsay/exceptional-java
+intents:
+  - id: external_failure
+    title: Handle external / unrecoverable failure
+    severity: required
+    language: java
+    blessed:
+      symbol: org.dempsay.utils.exceptional.api.ExceptionalSupplier.of
+      kind: method
+    snippetRef: exceptional/ExceptionalSupplier.java
+    snippets:
+      - ref: exceptional/ExceptionalSupplier.java
+        role: primary
+      - ref: exceptional/ExceptionalSupplierChain.java
+        role: secondary
+    triggers:
+      - IOException
+      - SQLException
+      - InterruptedException
+      - external I/O
+      - network call
+      - JDBC
+    antiPatterns:
+      - pattern: "catch\\s*\\(\\s*(IOException|SQLException|InterruptedException)"
+        message: Use ExceptionalSupplier/Resource, do not catch checked external exceptions
+      - pattern: "throws\\s+IOException"
+        message: Do not bubble IOException on service APIs
+    never:
+      - programming errors (NullPointerException, broken invariants)
+      - domain / business exceptions
+    docs:
+      - https://github.com/sdempsay/exceptional-java/blob/master/WhyBeExceptional.md
