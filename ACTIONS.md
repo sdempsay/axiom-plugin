@@ -1,5 +1,9 @@
 # ACTIONS
 
+## 2026-09-28
+
+- SNAPSHOT is `1.1.0-SNAPSHOT` (tracks the `1.0` line). `@since` stays `1.0.0` until a `1.0` tag exists.
+
 ## 2026-08-31
 
 - Javadoc `@since` is `1.0.0` (first public release; not `0.1.0` / SNAPSHOT).
